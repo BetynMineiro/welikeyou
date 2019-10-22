@@ -1,0 +1,41 @@
+We Like You - App
+
+Short explanation:
+
+We Like You is a platform that enables colleagues to send praises to each other. The app will have limited features: 
+Sending single praises (similar to send 1-way message)
+Sending group praises (1 message to multiple receivers) 
+receiving praises
+Requesting feedback (similar to send 1-way message)
+View Team
+View profile of a colleague
+Settings:
+Disable notifications (on a mobile phone)
+Select language (English or Dutch)
+
+
+UI/UX:
+The apps will try to be as close to the Whatsapp UI/UX as possible.
+
+
+For the website account:
+
+URL: https://welikeyou.nl
+Team: w2c
+Login: raj.patidar07@gmail.com
+Password: 12345
+
+
+Wireframes:
+
+https://drive.google.com/file/d/1HHevffN2WAV3mJ6N4ibtC5w6qcsjW4-7/view?usp=sharing
+
+
+
+Any questions, ask:
+
+Dalton Noland        d.noland@bookerator.com
+Augusto Arnold    a.arnold@bookerator.com
+
+
+Please quote price and time frame for hybrid development using our rest api as info base
