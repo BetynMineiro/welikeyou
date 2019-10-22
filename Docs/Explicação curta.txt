@@ -39,3 +39,28 @@ Augusto Arnold    a.arnold@bookerator.com
 
 
 Please quote price and time frame for hybrid development using our rest api as info base
+
+
+Premissas:
+- Entregas serão semanais (na demo do android e apple store)
+- Os teste serão feitos por nós com code validatios (para isso precisa colocar no github ou gitlab)
+- Tem um app que tu fez como referencia?
+- Tem como tu fazer um exemplo para nós com as duas primeiras telas e mais a terceira sem design (trazendo as atividade em uma table)
+- todos textos serão em 2 linguas (entao precisa de bundle )
+- Caso a gente feche o projeto a primeira entrega a gente paga quando aprovar e o resto no final do projeto
+- Para o pagamento nós usamos paypal e pagamos depois que o app for aceito nas duas stores (apple e google)
+
+- lembrando que nós temos mais trabalho por vir, temos um time na india mas que estamos repensado por questoes de performance
+  dando certo é uma boa entrada para podermos ter mais projetos no futuro, com possibilidade de efetivação
+  nossas duas empresas são
+  welikeyou.nl
+  bookerator.com
+
+
+ As duas primeiras com aquele layout simples
+ E a terceira sem layout
+
+
+
+body para login
+{"getLogin":{"email":"raj.patidar07@gmail.com","password":"123456","account_id":"2"}}
