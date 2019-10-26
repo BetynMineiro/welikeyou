@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController subDomainController = TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController loginController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -33,33 +34,39 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 110.0, bottom: 30.0),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "Enter Subdomain ",
-                        style: TextStyle(color: Colors.black, fontSize: 40.0),
-                      ),
-                      Text(
-                        "Enter your workspace's welikeyou Url ",
-                        style: TextStyle(color: Colors.black, fontSize: 18.0),
-                      ),
-                    ]),
+                child: Text(
+                  "Sign in to Test Team ",
+                  style: TextStyle(color: Colors.black, fontSize: 40.0),
+                ),
               ),
               TextFormField(
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: "Domain",
-                  // labelText: "Enter your workspace's welikeyou Url",
-                  labelStyle: TextStyle(color: Colors.black),
-
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                ),
-                textAlign: TextAlign.left,
+                    labelText: "Email:",
+                    labelStyle: TextStyle(color: Colors.black),
+                    contentPadding: EdgeInsets.fromLTRB(40.0, 10.0, 0.0, 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+                textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black, fontSize: 18.0),
-                controller: subDomainController,
+                controller: loginController,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return "Enter one valid workspace";
+                  }
+                },
+              ),
+              TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                    labelText: "Password",
+                    labelStyle: TextStyle(color: Colors.black),
+                    contentPadding: EdgeInsets.fromLTRB(40.0, 10.0, 0.0, 10.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.black, fontSize: 18.0),
+                controller: passwordController,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Enter one valid workspace";
@@ -77,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       }
                     },
                     child: Text(
-                      "CONTINUE",
+                      "SIGN IN",
                       style: TextStyle(color: Colors.white, fontSize: 25.0),
                     ),
                     color: Colors.green,
