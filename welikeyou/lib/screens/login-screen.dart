@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:welikeyou/screens/home-screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,9 +15,19 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => HomeScreen()));
+          },
+        ),
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(10.0, 140.0, 10.0, 0.0),
+        padding: EdgeInsets.fromLTRB(10.0, 60.0, 10.0, 0.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -33,28 +44,32 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 110.0, bottom: 30.0),
+                padding: EdgeInsets.only(top: 80.0, bottom: 30.0),
                 child: Text(
                   "Sign in to Test Team ",
-                  style: TextStyle(color: Colors.black, fontSize: 40.0),
+                  style: TextStyle(color: Colors.black, fontSize: 30.0),
                 ),
               ),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    labelText: "Email:",
-                    labelStyle: TextStyle(color: Colors.black),
-                    contentPadding: EdgeInsets.fromLTRB(40.0, 10.0, 0.0, 10.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0))),
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black, fontSize: 18.0),
-                controller: loginController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return "Enter one valid workspace";
-                  }
-                },
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30.0),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                      labelText: "Email:",
+                      labelStyle: TextStyle(color: Colors.black),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(40.0, 10.0, 0.0, 10.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0))),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.black, fontSize: 18.0),
+                  controller: loginController,
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return "Enter one valid Email";
+                    }
+                  },
+                ),
               ),
               TextFormField(
                 keyboardType: TextInputType.visiblePassword,
@@ -69,12 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: passwordController,
                 validator: (value) {
                   if (value.isEmpty) {
-                    return "Enter one valid workspace";
+                    return "Enter one valid password";
                   }
                 },
               ),
               Padding(
-                padding: EdgeInsets.only(top: 80.0, bottom: 10.0),
+                padding: EdgeInsets.only(top: 30.0, bottom: 50.0),
                 child: Container(
                   height: 50.0,
                   child: RaisedButton(
@@ -93,6 +108,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 40.0,
+          color: Colors.green,
         ),
       ),
     );

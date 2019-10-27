@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:welikeyou/screens/login-screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -73,7 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: RaisedButton(
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        print("Seguir");
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => LoginScreen()));
                       }
                     },
                     child: Text(
