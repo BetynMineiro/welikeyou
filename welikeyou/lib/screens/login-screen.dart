@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:welikeyou/screens/home-screen.dart';
+import 'package:welikeyou/screens/team-screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -95,7 +96,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: RaisedButton(
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        print("Seguir");
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => TeamScreen()));
                       }
                     },
                     child: Text(
