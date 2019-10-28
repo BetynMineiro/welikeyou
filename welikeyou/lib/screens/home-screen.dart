@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:welikeyou/models/domain-model.dart';
 import 'package:welikeyou/screens/login-screen.dart';
+import 'package:welikeyou/services/alert-service.dart';
+import 'package:welikeyou/services/http-service.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -72,10 +75,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   height: 50.0,
                   child: RaisedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState.validate()) {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => LoginScreen()));
+                        var domain = DomainModel(
+                            checkSubdomain: CheckSubdomain(
+                                subdomain: subDomainController.text));
+                        var request = await HttpService()
+                            .postData("checkSubdomain", domain.toJson());
+
+                        var domainSucess =
+                            request["checkSubdomain"]["status"] == "success"
+                                ? true
+                                : false;
+                        if (domainSucess) {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                        } else {
+                          AlertService.showDialogAlert(
+                            context,
+                            title: "Domain Alert:",
+                            textMenssage: "Authentication Failed",
+                          );
+                        }
                       }
                     },
                     child: Text(

@@ -74,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextFormField(
                 keyboardType: TextInputType.visiblePassword,
+                 obscureText: true,
                 decoration: InputDecoration(
                     labelText: "Password",
                     labelStyle: TextStyle(color: Colors.black),

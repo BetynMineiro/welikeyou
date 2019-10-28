@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:welikeyou/screens/home-screen.dart';
+import 'dart:async';
 
-void main() {
+void main() async {
   runApp(
     MaterialApp(
       home: HomeScreen(),
